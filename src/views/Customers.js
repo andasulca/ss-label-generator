@@ -1,7 +1,9 @@
+import CustomerTable from "../components/CustomerTable";
+
 function Customers() {
     return (
         <div>
-            <h1>Some great content</h1>
+            <CustomerTable />
         </div>
     )
 }
