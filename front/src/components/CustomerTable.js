@@ -5,9 +5,10 @@ function CustomerTable({data}) {
     if( data != null) {
 
     for (const [index, value] of Object.entries(data)) {
-        items.push(<tr key={value.id}><td>{value.id}</td><td>{value.nosaukums}</td><td>{value.reg_nr}</td></tr>)
+        items.push(<tr key={index}><td>{value.id}</td><td>{value.nosaukums}</td><td>{value.reg_nr}</td></tr>)
       }
     }
+    
     return (
         <Table striped bordered hover>
             <thead>
