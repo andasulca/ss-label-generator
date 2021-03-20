@@ -1,34 +1,24 @@
 import { Table } from 'react-bootstrap'
 
-function CustomerTable() {
+function CustomerTable({data}) {
+    const items = [];
+    if( data != null) {
+
+    for (const [index, value] of Object.entries(data)) {
+        items.push(<tr key={value.id}><td>{value.id}</td><td>{value.nosaukums}</td><td>{value.reg_nr}</td></tr>)
+      }
+    }
     return (
         <Table striped bordered hover>
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Username</th>
+                    <th>Nosaukums</th>
+                    <th>Reģ. nr</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td colSpan="2">Larry the Bird</td>
-                    <td>@twitter</td>
-                </tr>
+                {items}
             </tbody>
         </Table>
     )

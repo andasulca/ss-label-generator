@@ -1,12 +1,8 @@
-const Button = ({ color, text, onClick }) => {
+const Button = ({ classname, text, onClick }) => {
+  console.log(classname)
     return (
       <button
-        className="btn btn-default"
-        style={{
-          margin: '10px 10px 10px 0',
-          backgroundColor: color,
-          border: '1px solid'
-        }}
+        className= {`btn ${classname}`}
         onClick={onClick}
         >
           {text}

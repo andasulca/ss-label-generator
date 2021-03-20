@@ -1,24 +1,19 @@
-import CustomerTable from "../components/CustomerTable";
-// import { Button } from 'react-bootstrap'
-// import { Link } from 'react-router-dom'
-import Button from '../components/Button'
+import CustomerTable from '../components/CustomerTable';
+import Button from '../components/Button';
 
-var onClickAction = function () {
-    window.location.href = 'google.com';
- }
+const onClickAction = () => {
+  window.location.href = 'google.com';
+};
 
-function Customers() {
-    return (
-        <div>
-            <CustomerTable />
-            {/* <Button variant="dark"><Link to="/">Go somewhere</Link></Button> */}
-            <Button 
-            color = "blue"
-            text = "Click me"
-            onClick={() => onClickAction()}
-            />
-        </div>
-    )
+function Customers({ clients }) {
+  console.log(clients);
+  return (
+    <div>
+      {clients.loading ? 'Loading' : <CustomerTable data={clients.data} />}
+
+      <Button classname="great-btn" text="Click me" onClick={onClickAction} />
+    </div>
+  );
 }
 
-export default Customers
+export default Customers;
