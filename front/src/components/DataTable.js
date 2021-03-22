@@ -48,8 +48,8 @@ function DataTable({data}) {
 
     const columns = [
         { field: 'id', headerName: 'ID', width: 70 },
-        { field: 'nosaukums', headerName: 'Nosaukums', width: 175 },
-        { field: 'reg_nr', headerName: 'Reģ. nr', width: 175 },
+        { field: 'company_name', headerName: 'Nosaukums', width: 175 },
+        { field: 'reg_number', headerName: 'Reģ. nr', width: 175 },
       ];
 
   return (

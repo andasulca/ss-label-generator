@@ -10,7 +10,7 @@ import axios from 'axios';
 function AxiosPost( uri, data ) {
   const response = async (resolve, reject) => {
       try {
-          const url = `http://localhost:5000/${uri}`;
+          const url = `http://localhost:5000/post/${uri}`;
           await axios.post(url, data);
           resolve();
       } catch(e) {
@@ -33,16 +33,16 @@ function FormDialog({btnText, cancel, save}) {
     setOpen(false);
   };
 
-  const [nosaukums, setNosaukums] = useState('');
-  const [reg_nr, setRegNr] = useState('');
+  const [company_name, setNosaukums] = useState('');
+  const [reg_number, setRegNr] = useState('');
 
   const handleNosaukumsChange = (event) => setNosaukums(event.target.value);
   const handleRegNrChange = (event) => setRegNr(event.target.value);
 
   const handleSave = async () => {
-    await AxiosPost('klienti', {
-        nosaukums,
-        reg_nr
+    await AxiosPost('clients', {
+        company_name,
+        reg_number
     });
     setNosaukums('');
     setRegNr('');
@@ -60,19 +60,19 @@ function FormDialog({btnText, cancel, save}) {
           <TextField
             required
             onChange = {handleNosaukumsChange}
-            value = {nosaukums}
+            value = {company_name}
             autoFocus
             margin="dense"
-            id="nosaukums"
+            id="company_name"
             label="Uzņēmuma nosaukums"
             fullWidth
           />
           <TextField
             required
             onChange = {handleRegNrChange}
-            value = {reg_nr}
+            value = {reg_number}
             margin="dense"
-            id="reg_nr"
+            id="reg_number"
             label="Reģistrācijas numurs"
             type="number"
             fullWidth

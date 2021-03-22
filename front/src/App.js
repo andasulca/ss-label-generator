@@ -15,7 +15,7 @@ function useAxiosGet(uri) {
             loading: true,
             data: null,
         });
-        const url = `http://localhost:5000/${uri}`;
+        const url = `http://localhost:5000/get/${uri}`;
 
         axios.get(url)
             .then((response) => {
@@ -37,7 +37,7 @@ function useAxiosGet(uri) {
 }
 
 function App() {
-	const clients = useAxiosGet('Klienti');
+	const clients = useAxiosGet('clients');
 	return (
 		<div className="App">
 			<Router >

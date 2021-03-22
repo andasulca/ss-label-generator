@@ -11,15 +11,33 @@ app.use(express.json()); //req.body
 
 //create a todo
 
-app.post("/klienti", async (req, res) => {
+app.post("/post/clients", async (req, res) => {
+  console.log(req.body);
   try {
-    const { description } = req.body;
-    const newTodo = await pool.query(
-      "INSERT INTO todo (description) VALUES($1) RETURNING *",
-      [description]
+    const newRow = await pool.query(
+      "INSERT INTO public.clients" +
+      "(company_name, reg_number)" + 
+      " VALUES('" + eq.body.company_name + "' , " 
+      + req.body.reg_number + ") RETURNING *"
     );
+    res.json(newRow.rows[0]);
+  } catch (err) {
+    console.error(err.message);
+  }
+});
 
-    res.json(newTodo.rows[0]);
+app.post("/post/boxes", async (req, res) => {
+  console.log(req.body);
+  try {
+    const newRow = await pool.query(
+      "INSERT INTO public.boxes" +
+      "(box_number, client_id, print_date)" + 
+      " VALUES('" + req.body.box_number + "' , " 
+      + req.body.client_id + ", " +
+      req.body.print_date +
+      ") RETURNING *"
+    );
+    res.json(newRow.rows[0]);
   } catch (err) {
     console.error(err.message);
   }
@@ -27,18 +45,10 @@ app.post("/klienti", async (req, res) => {
 
 //get all todos
 
-app.get("/kastes", async (req, res) => {
+app.get("/get/*", async (req, res) => {
+  //console.log(req);
   try {
-    const allTodos = await pool.query("SELECT * FROM public.\"Kastes\"");
-    res.json(allTodos.rows);
-  } catch (err) {
-    console.error(err.message);
-  }
-});
-
-app.get("/klienti", async (req, res) => {
-  try {
-    const allTodos = await pool.query("SELECT * FROM public.\"klienti\"");
+    const allTodos = await pool.query("SELECT * FROM public." + req.params[0]);
     res.json(allTodos.rows);
   } catch (err) {
     console.error(err.message);
