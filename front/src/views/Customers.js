@@ -9,7 +9,6 @@ const onClickAction = () => {
 };
 
 function Customers({ clients }) {
-  console.log(clients);
   return (
     <div>
       {clients.loading ? <Loader /> : <CustomerTable data={clients.data} />}

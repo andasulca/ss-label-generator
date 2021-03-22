@@ -38,7 +38,6 @@ function useAxiosGet(uri) {
 
 function App() {
 	const clients = useAxiosGet('Klienti');
-	console.log(clients)
 	return (
 		<div className="App">
 			<Router >
