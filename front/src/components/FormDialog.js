@@ -5,6 +5,22 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import { useState }  from 'react';
+import axios from 'axios';
+
+function AxiosPost( uri, data ) {
+  const response = async (resolve, reject) => {
+      try {
+          const url = `http://localhost:5000/${uri}`;
+          await axios.post(url, data);
+          resolve();
+      } catch(e) {
+          reject();
+          alert('Something went wrong.');
+      }
+  }
+
+  return new Promise(response);
+}
 
 function FormDialog({btnText, cancel, save}) {
   const [open, setOpen] = useState(false);
@@ -17,6 +33,22 @@ function FormDialog({btnText, cancel, save}) {
     setOpen(false);
   };
 
+  const [nosaukums, setNosaukums] = useState('');
+  const [reg_nr, setRegNr] = useState('');
+
+  const handleNosaukumsChange = (event) => setNosaukums(event.target.value);
+  const handleRegNrChange = (event) => setRegNr(event.target.value);
+
+  const handleSave = async () => {
+    await AxiosPost('klienti', {
+        nosaukums,
+        reg_nr
+    });
+    setNosaukums('');
+    setRegNr('');
+    setOpen(false);
+  }
+
   return (
     <div>
       <Button variant="outlined" color="primary" onClick={handleClickOpen}>
@@ -27,17 +59,20 @@ function FormDialog({btnText, cancel, save}) {
         <DialogContent>
           <TextField
             required
+            onChange = {handleNosaukumsChange}
+            value = {nosaukums}
             autoFocus
             margin="dense"
-            id="name"
+            id="nosaukums"
             label="Uzņēmuma nosaukums"
             fullWidth
           />
           <TextField
             required
-            autoFocus
+            onChange = {handleRegNrChange}
+            value = {reg_nr}
             margin="dense"
-            id="name"
+            id="reg_nr"
             label="Reģistrācijas numurs"
             type="number"
             fullWidth
@@ -47,7 +82,7 @@ function FormDialog({btnText, cancel, save}) {
           <Button onClick={handleClose} color="primary">
             {cancel}
           </Button>
-          <Button onClick={handleClose} color="primary">
+          <Button onClick={handleSave} color="primary">
             {save}
           </Button>
         </DialogActions>
