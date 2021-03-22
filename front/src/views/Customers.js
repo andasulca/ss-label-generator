@@ -1,16 +1,16 @@
-import CustomerTable from '../components/CustomerTable';
-import Button from '../components/Button';
+import CustomerTable from "../components/CustomerTable";
+import Button from "../components/Button";
+import Loader from "../components/BeatLoader";
 
 const onClickAction = () => {
-  window.location.href = 'google.com';
+  window.location.href = "google.com";
 };
 
 function Customers({ clients }) {
   console.log(clients);
   return (
     <div>
-      {clients.loading ? 'Loading' : <CustomerTable data={clients.data} />}
-
+      {clients.loading ? <Loader /> : <CustomerTable data={clients.data} />}
       <Button classname="great-btn" text="Click me" onClick={onClickAction} />
     </div>
   );
