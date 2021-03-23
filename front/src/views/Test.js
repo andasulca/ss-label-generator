@@ -1,9 +1,12 @@
 import Selectize from "../components/common/Selectize"
+import AxiosGet from "../axios/AxiosGet";
+import Loader from "../components/BeatLoader";
 
 const Test = () => {
+    const clients = AxiosGet('clients');
     return (
         <div>
-            <Selectize />
+            {clients.loading ? <Loader /> : <Selectize data={clients.data}/>}
         </div>
     )
 }
