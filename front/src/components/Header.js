@@ -1,5 +1,6 @@
 import { Navbar, Nav, NavDropdown, Form, Button } from 'react-bootstrap'
 import logo from '../assets/images/logo.png';
+import Modal from './common/Modal';
 
 function Header() {
     return (
@@ -10,7 +11,14 @@ function Header() {
                         <Nav.Link href="/">Klienti</Nav.Link>
                         <Nav.Link href="/boxes">Kastes</Nav.Link>
                         <NavDropdown title="Izdrukāt uzlīmes" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.1">Izdrukāt jaunus svītrkodus</NavDropdown.Item>
+                            <NavDropdown.Item href="">
+                                <Modal
+                                    btnText="Izdrukāt jaunus svītrkodus"
+                                    cancel="Atcelt"
+                                    save="drukāt"
+                                    dialogTitle="Izdrukāt jaunas uzlīmes"
+                                />
+                            </NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.2">Izdrukāt esošus svītrkodus</NavDropdown.Item>
                         </NavDropdown>
                     </Nav>

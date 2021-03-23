@@ -14,7 +14,7 @@ const Boxes = () => {
       
     return (
         <div>
-           {clients.loading ? <Loader /> :  <Table rows={row} columns={columns} pageSize={5}/> }
+           {clients.loading ? <Loader /> :  <Table rows={row} columns={columns} pageSize={10}/> }
         </div>
     )
 }

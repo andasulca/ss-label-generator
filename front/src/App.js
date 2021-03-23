@@ -4,6 +4,7 @@ import Customers from "./views/Customers";
 import { useState, useEffect }  from 'react';
 import axios from 'axios';
 import Boxes from './views/Boxes';
+import Test from './views/Test';
 
 function useAxiosGet(uri) {
     const [request, setRequest] = useState({
@@ -52,6 +53,9 @@ function App() {
                         <Route path="/boxes">
                             <Boxes 
                             clients = {clients}/>
+                        </Route>
+                        <Route path="/test">
+                            <Test />
                         </Route>
 					</Switch>
 				</div>

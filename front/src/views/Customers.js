@@ -1,20 +1,21 @@
-// import CustomerTable from "../components/CustomerTable";
-// import Button from "../components/Button";
 import Loader from "../components/BeatLoader";
 import FormDialog from "../components/FormDialog";
-import DataTable from "../components/DataTable";
-
-// const onClickAction = () => {
-//   window.location.href = "google.com";
-// };
+import Table from "../components/common/Table"
 
 function Customers({ clients }) {
+  const columns = [
+    { field: "id", headerName: "ID", width: 70 },
+    { field: "company_name", headerName: "Nosaukums", width: 175 },
+    { field: "reg_number", headerName: "Reģ. nr", width: 175 },
+  ];
+
+  const row = clients.data
+
   return (
     <div>
-      {/* {clients.loading ? <Loader /> : <CustomerTable data={clients.data} />}
-      <Button classname="great-btn" text="Pievienot klientu" onClick={onClickAction} /> */}
-      {clients.loading ? <Loader /> : <DataTable data={clients.data} />}
+      {clients.loading ? <Loader /> : <Table rows={row} columns={columns} pageSize={10}/>}
       <FormDialog btnText="Pievienot klientu" cancel="Atcelt" save="saglabāt"/>
+      
     </div>
   );
 }
