@@ -1,11 +1,7 @@
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Header from "./components/Header";
-import Customers from "./views/Customers";
 import { useState, useEffect }  from 'react';
 import axios from 'axios';
-import Boxes from './views/Boxes';
 
-function useAxiosGet(uri) {
+function AxiosGet(uri) {
     const [request, setRequest] = useState({
         loading: true,
         data: null,
@@ -37,27 +33,4 @@ function useAxiosGet(uri) {
     return request;
 }
 
-function App() {
-	const clients = useAxiosGet('clients');
-	return (
-		<div className="App">
-			<Router >
-				<Header />
-				<div className="container">
-					<Switch>
-						<Route exact path="/">
-							<Customers
-							clients = {clients}/>
-						</Route>
-                        <Route path="/kastes">
-                            <Boxes 
-                            clients = {clients}/>
-                        </Route>
-					</Switch>
-				</div>
-			</Router>
-		</div>
-	);
-}
-
-export default App;
+export default AxiosGet;

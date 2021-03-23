@@ -5,11 +5,12 @@ function Header() {
     return (
         <div>
             <Navbar bg="light" expand="lg">
-                <Navbar.Brand href="#home"><img src={logo} alt="Logo" className="logo"/></Navbar.Brand>
+                <Navbar.Brand href=""><img src={logo} alt="Logo" className="logo"/></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
-                        <Nav.Link href="#home">Klienti</Nav.Link>
+                        <Nav.Link href="/">Klienti</Nav.Link>
+                        <Nav.Link href="/kastes">Kastes</Nav.Link>
                         <NavDropdown title="Izdrukāt uzlīmes" id="basic-nav-dropdown">
                             <NavDropdown.Item href="#action/3.1">Izdrukāt jaunus svītrkodus</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.2">Izdrukāt esošus svītrkodus</NavDropdown.Item>
