@@ -4,13 +4,11 @@ import logo from '../assets/images/logo.png';
 function Header() {
     return (
         <div>
-            <Navbar bg="light" expand="lg">
+            <Navbar bg="light">
                 <Navbar.Brand href=""><img src={logo} alt="Logo" className="logo"/></Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
                         <Nav.Link href="/">Klienti</Nav.Link>
-                        <Nav.Link href="/kastes">Kastes</Nav.Link>
+                        <Nav.Link href="/boxes">Kastes</Nav.Link>
                         <NavDropdown title="Izdrukāt uzlīmes" id="basic-nav-dropdown">
                             <NavDropdown.Item href="#action/3.1">Izdrukāt jaunus svītrkodus</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.2">Izdrukāt esošus svītrkodus</NavDropdown.Item>
@@ -19,7 +17,6 @@ function Header() {
                     <Form inline>
                         <Button variant="outline-danger">Logout</Button>
                     </Form>
-                </Navbar.Collapse>
             </Navbar>
         </div>
     )

@@ -49,7 +49,7 @@ function App() {
 							<Customers
 							clients = {clients}/>
 						</Route>
-                        <Route path="/kastes">
+                        <Route path="/boxes">
                             <Boxes 
                             clients = {clients}/>
                         </Route>

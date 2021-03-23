@@ -46,7 +46,7 @@ app.post("/post/boxes", async (req, res) => {
 //get all todos
 
 app.get("/get/*", async (req, res) => {
-  //console.log(req);
+  
   try {
     const allTodos = await pool.query("SELECT * FROM public." + req.params[0]);
     res.json(allTodos.rows);
