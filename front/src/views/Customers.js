@@ -15,7 +15,6 @@ function Customers({ clients }) {
     <div>
       {clients.loading ? <Loader /> : <Table rows={row} columns={columns} pageSize={10}/>}
       <FormDialog btnText="Pievienot klientu" cancel="Atcelt" save="saglabāt"/>
-      
     </div>
   );
 }

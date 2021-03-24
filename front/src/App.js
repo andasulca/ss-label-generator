@@ -5,6 +5,8 @@ import { useState, useEffect }  from 'react';
 import axios from 'axios';
 import Boxes from './views/Boxes';
 import Test from './views/Test';
+import NewLabels from './views/NewLabels';
+import Labels from './views/Labels';
 
 function useAxiosGet(uri) {
     const [request, setRequest] = useState({
@@ -56,6 +58,12 @@ function App() {
                         </Route>
                         <Route path="/test">
                             <Test />
+                        </Route>
+                        <Route path="/newlabels">
+                            <NewLabels />
+                        </Route>
+                        <Route path="/labels">
+                            <Labels />
                         </Route>
 					</Switch>
 				</div>
