@@ -3,18 +3,19 @@ import Table from "../components/common/Table"
 import Loader from "../components/BeatLoader";
 
 const Boxes = () => {
-    const clients = AxiosGet('clients');
+    const boxes = AxiosGet('boxes');
+    console.log(boxes)
     const columns = [
-        { field: 'id', headerName: 'ID', width: 70 },
-        { field: 'company_name', headerName: 'Nosaukums', width: 175 },
-        { field: 'reg_number', headerName: 'Reģ. nr', width: 175 },
+        { field: 'id', headerName: 'Kastes numurs', width: 175 },
+        { field: 'client_id', headerName: 'Klienta numurs', width: 175 },
+        { field: 'print_date', headerName: 'Izdrukāts', width: 175 },
       ];
 
-    const row = clients.data
+    const row = boxes.data
       
     return (
         <div>
-           {clients.loading ? <Loader /> :  <Table rows={row} columns={columns} pageSize={10}/> }
+           {boxes.loading ? <Loader /> :  <Table rows={row} columns={columns} pageSize={10}/> }
         </div>
     )
 }
