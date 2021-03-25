@@ -8,9 +8,15 @@ const Selectize = ( {data} ) => {
       })
     )
 
+    const getValue = (e) => {
+        const selectedValue = e.value
+        console.log(selectedValue)
+    }
+
+
   return (
     <div>
-        <Select options={options} />
+        <Select options={options} onChange={getValue}/>
     </div>
   )
 }
