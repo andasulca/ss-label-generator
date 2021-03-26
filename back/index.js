@@ -17,7 +17,7 @@ app.post("/post/clients", async (req, res) => {
     const newRow = await pool.query(
       "INSERT INTO public.clients" +
       "(company_name, reg_number)" + 
-      " VALUES('" + eq.body.company_name + "' , " 
+      " VALUES('" + req.body.company_name + "' , " 
       + req.body.reg_number + ") RETURNING *"
     );
     res.json(newRow.rows[0]);
@@ -46,6 +46,7 @@ app.post("/post/boxes", async (req, res) => {
 //get all todos
 
 app.get("/get/*", async (req, res) => {
+  console.log(req.params)
   
   try {
     const allTodos = await pool.query("SELECT * FROM public." + req.params[0]);
