@@ -15,7 +15,6 @@ const csvData = [
 const Test = () => {
     const clients = AxiosGet('clients');
 
-
     return (
         <div>
             {clients.loading ? <Loader /> : <Selectize data={clients.data}/>}
