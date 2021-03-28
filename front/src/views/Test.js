@@ -20,7 +20,7 @@ const Test = () => {
             {clients.loading ? <Loader /> : <Selectize data={clients.data}/>}
             <InputField label={"Uzlīmju skaits"} />
             <ToPrint />
-            <CSVLink data={csvData}>Download me</CSVLink>;
+            {clients.loading ? <Loader /> : <CSVLink data={clients.data}>Download me</CSVLink>}
         </div>
     )
 }
