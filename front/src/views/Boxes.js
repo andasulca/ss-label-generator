@@ -3,11 +3,12 @@ import Table from "../components/common/Table"
 import Loader from "../components/BeatLoader";
 
 const Boxes = () => {
-    const boxes = AxiosGet('boxes');
+    const boxes = AxiosGet('boxeswithclients');
     console.log(boxes)
     const columns = [
         { field: 'id', headerName: 'Kastes numurs', width: 175 },
         { field: 'client_id', headerName: 'Klienta numurs', width: 175 },
+        { field: 'company_name', headerName: 'Nosaukums', width: 175 },
         { field: 'print_date', headerName: 'Izdrukāts', width: 175 },
       ];
 
