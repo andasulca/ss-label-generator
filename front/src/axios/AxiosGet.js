@@ -1,7 +1,7 @@
-import { useState, useEffect }  from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-function AxiosGet(uri) {
+const AxiosGet = (uri) => {
     const [request, setRequest] = useState({
         loading: true,
         data: null,
@@ -28,7 +28,7 @@ function AxiosGet(uri) {
                 });
             });
     }, [uri]);
-    
+
 
     return request;
 }

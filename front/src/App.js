@@ -8,7 +8,7 @@ import Test from './views/Test';
 import NewLabels from './views/NewLabels';
 import Labels from './views/Labels';
 
-function useAxiosGet(uri) {
+const useAxiosGet = (uri) => {
     const [request, setRequest] = useState({
         loading: true,
         data: null,
@@ -40,7 +40,7 @@ function useAxiosGet(uri) {
     return request;
 }
 
-function App() {
+const App = () => {
 	const clients = useAxiosGet('clients');
 	return (
 		<div className="App">
