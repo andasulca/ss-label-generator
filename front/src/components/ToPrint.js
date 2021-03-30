@@ -3,6 +3,7 @@ import ReactToPrint from "react-to-print";
 import Barcode from "react-barcode";
 //import InputField from "../components/common/InputField";
 import TextField from "@material-ui/core/TextField";
+import logo from '../assets/images/logo.png';
 
 class ComponentToPrint extends React.Component {
 	render() {
@@ -18,17 +19,27 @@ class ComponentToPrint extends React.Component {
 			components.push(Barcode);
 		}
 		const componentsToRender = components.map((Component, i) => (
-			<Component key={i + startingValue} value={i + startingValue} />
+			//<Component key={i + startingValue} value={i + startingValue} />
+			<div className="with-logo">
+				<div className="float-left">
+					<img src={logo} alt="Logo" className="logo-barcode" />
+					<h3 className="client-id">client_id</h3>
+				</div>
+				<div className="barcode float-right">
+					<Component key={i + startingValue} value={i + startingValue} />
+				</div>
+			</div>
 		));
 
 		return (
-			<table>
-				<tbody>
-					<tr>
-						<td>{componentsToRender}</td>
-					</tr>
-				</tbody>
-			</table>
+			// <table>
+			// 	<tbody>
+			// 		<tr>
+			// 			<td>{componentsToRender}</td>
+			// 		</tr>
+			// 	</tbody>
+			// </table>
+			<div className="barcode-container">{componentsToRender}</div>
 		);
 	}
 }

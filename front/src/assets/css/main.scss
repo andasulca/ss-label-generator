@@ -10,3 +10,32 @@
     background-color: #dc3545;
 }
 
+.barcode-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    // grid-template-rows: 12.5%;
+
+    // .with-logo {
+    //     height: 37mm;
+    // }
+
+    .logo-barcode {
+        // position: absolute;
+        // top: 0;
+        // left: 0;
+        width: 50px;
+    }
+
+    // .client-id {
+    //     position: absolute;
+    //     left: 0;
+    //     bottom: 0;
+    // }
+
+    // .barcode {
+    //     position: absolute;
+    //     right: 0;
+    //     top: 0;
+    // }
+}
