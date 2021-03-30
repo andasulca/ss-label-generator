@@ -26,7 +26,7 @@ class ComponentToPrint extends React.Component {
 					<h3 className="client-id">client_id</h3>
 				</div>
 				<div className="barcode float-right">
-					<Component key={i + startingValue} value={i + startingValue} />
+					<Component width={4} key={i + startingValue} value={i + startingValue} />
 				</div>
 			</div>
 		));
