@@ -5,24 +5,9 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import { useState } from 'react';
-import axios from 'axios';
+import AxiosPost from "../axios/AxiosPost";
 
-const AxiosPost = (uri, data) => {
-	const response = async (resolve, reject) => {
-		try {
-			const url = `http://localhost:5000/post/${uri}`;
-			await axios.post(url, data);
-			resolve();
-		} catch (e) {
-			reject();
-			alert('Something went wrong.');
-		}
-	}
-
-	return new Promise(response);
-}
-
-function FormDialog({ btnText, cancel, save }) {
+const FormDialog = ({ btnText, cancel, save }) => {
 	const [open, setOpen] = useState(false);
 
 	const handleClickOpen = () => {

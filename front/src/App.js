@@ -1,47 +1,14 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from "./components/Header";
 import Customers from "./views/Customers";
-import { useState, useEffect }  from 'react';
-import axios from 'axios';
 import Boxes from './views/Boxes';
 import Test from './views/Test';
 import NewLabels from './views/NewLabels';
 import Labels from './views/Labels';
-
-const useAxiosGet = (uri) => {
-    const [request, setRequest] = useState({
-        loading: true,
-        data: null,
-    });
-
-    useEffect(() => {
-        setRequest({
-            loading: true,
-            data: null,
-        });
-        const url = `http://localhost:5000/get/${uri}`;
-
-        axios.get(url)
-            .then((response) => {
-                setRequest({
-                    loading: false,
-                    data: response.data,
-                });
-            }).catch(() => {
-                alert('Something went wrong.');
-                setRequest({
-                    loading: false,
-                    data: null,
-                });
-            });
-    }, [uri]);
-    
-
-    return request;
-}
+import AxiosGet from "./axios/AxiosGet";
 
 const App = () => {
-	const clients = useAxiosGet('clients');
+	const clients = AxiosGet('clients');
 	return (
 		<div className="App">
 			<Router >
