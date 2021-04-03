@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import { UsersContext } from "./context";
+import React, { useContext } from 'react';
+import { UsersContext } from './context';
 
 const UserDetails = () => {
   //get the selected user from the usersContext

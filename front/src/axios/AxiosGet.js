@@ -1,36 +1,37 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const AxiosGet = (uri) => {
-    const [request, setRequest] = useState({
-        loading: true,
-        data: null,
+const AxiosGet = uri => {
+  const [request, setRequest] = useState({
+    loading: true,
+    data: null,
+  });
+
+  useEffect(() => {
+    setRequest({
+      loading: true,
+      data: null,
     });
+    const url = `http://localhost:5000/get/${uri}`;
 
-    useEffect(() => {
+    axios
+      .get(url)
+      .then(response => {
         setRequest({
-            loading: true,
-            data: null,
+          loading: false,
+          data: response.data,
         });
-        const url = `http://localhost:5000/get/${uri}`;
+      })
+      .catch(() => {
+        alert('Something went wrong.');
+        setRequest({
+          loading: false,
+          data: null,
+        });
+      });
+  }, [uri]);
 
-        axios.get(url)
-            .then((response) => {
-                setRequest({
-                    loading: false,
-                    data: response.data,
-                });
-            }).catch(() => {
-                alert('Something went wrong.');
-                setRequest({
-                    loading: false,
-                    data: null,
-                });
-            });
-    }, [uri]);
-
-
-    return request;
-}
+  return request;
+};
 
 export default AxiosGet;

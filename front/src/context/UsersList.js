@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
+import React, { useContext } from 'react';
 
-import { UsersContext } from "./context";
+import { UsersContext } from './context';
 
 const UsersList = props => {
   const usersContext = useContext(UsersContext);
@@ -11,12 +11,8 @@ const UsersList = props => {
     <div>
       <h4>UserList.js</h4>
       {users.map(user => {
-
         return (
-          <div
-            key={user.id}
-            onClick={() => setSelectedUser(user)}
-          >
+          <div key={user.id} onClick={() => setSelectedUser(user)}>
             {user.name}
           </div>
         );

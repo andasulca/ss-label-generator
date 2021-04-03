@@ -1,8 +1,8 @@
-import React, { useState, useContext } from "react";
-import { UsersContext } from "./context";
+import React, { useState, useContext } from 'react';
+import { UsersContext } from './context';
 
 const AddUser = () => {
-  const [userName, setUserName] = useState("");
+  const [userName, setUserName] = useState('');
   const { addNewUser } = useContext(UsersContext);
 
   const handleChange = e => {
@@ -19,10 +19,7 @@ const AddUser = () => {
         onChange={handleChange}
         placeholder="Enter name"
       />
-      <button
-        onClick={() => addNewUser(userName)}
-        disabled={!userName}
-      >
+      <button onClick={() => addNewUser(userName)} disabled={!userName}>
         Add
       </button>
     </>

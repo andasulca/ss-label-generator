@@ -1,15 +1,11 @@
-import React, { createContext, useState } from "react";
-import PropTypes from "prop-types";
+import React, { createContext, useState } from 'react';
+import PropTypes from 'prop-types';
 
 export const Context = createContext({});
 
 export const Provider = props => {
   // Initial values are obtained from the props
-  const {
-    users: initialUsers,
-    selectedUser: initialSelectedUsers,
-    children
-  } = props;
+  const { users: initialUsers, selectedUser: initialSelectedUsers, children } = props;
 
   // Use State to keep the values
   const [users, setUsers] = useState(initialUsers);
@@ -26,7 +22,7 @@ export const Provider = props => {
     setUsers,
     selectedUser,
     setSelectedUser,
-    addNewUser
+    addNewUser,
   };
 
   // pass the value in provider and return
@@ -37,10 +33,10 @@ export const { Consumer } = Context;
 
 Provider.propTypes = {
   users: PropTypes.array,
-  selectedUser: PropTypes.object
+  selectedUser: PropTypes.object,
 };
 
 Provider.defaultProps = {
   users: [],
-  selectedUser: {}
+  selectedUser: {},
 };

@@ -1,46 +1,44 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Header from "./components/Header";
-import Customers from "./views/Customers";
+import Header from './components/Header';
+import Customers from './views/Customers';
 import Boxes from './views/Boxes';
 import Test from './views/Test';
 import Test2 from './views/Test2';
 import NewLabels from './views/NewLabels';
 import Labels from './views/Labels';
-import AxiosGet from "./axios/AxiosGet";
+import AxiosGet from './axios/AxiosGet';
 
 const App = () => {
-	const clients = AxiosGet('clients');
-	return (
-		<div className="App">
-			<Router >
-				<Header />
-				<div className="container">
-					<Switch>
-						<Route exact path="/">
-							<Customers
-							clients = {clients}/>
-						</Route>
-                        <Route path="/boxes">
-                            <Boxes 
-                            clients = {clients}/>
-                        </Route>
-                        <Route path="/test">
-                            <Test />
-                        </Route>
-						<Route path="/test2">
-                            <Test2 />
-                        </Route>
-                        <Route path="/newlabels">
-                            <NewLabels />
-                        </Route>
-                        <Route path="/labels">
-                            <Labels />
-                        </Route>
-					</Switch>
-				</div>
-			</Router>
-		</div>
-	);
-}
+  const clients = AxiosGet('clients');
+  return (
+    <div className="App">
+      <Router>
+        <Header />
+        <div className="container">
+          <Switch>
+            <Route exact path="/">
+              <Customers clients={clients} />
+            </Route>
+            <Route path="/boxes">
+              <Boxes clients={clients} />
+            </Route>
+            <Route path="/test">
+              <Test />
+            </Route>
+            <Route path="/test2">
+              <Test2 />
+            </Route>
+            <Route path="/newlabels">
+              <NewLabels />
+            </Route>
+            <Route path="/labels">
+              <Labels />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
+    </div>
+  );
+};
 
 export default App;
