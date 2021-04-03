@@ -9,16 +9,8 @@ const App = () => {
   return (
     <div className="app">
       <UsersContextProvider users={users}>
-        <h2>Using context and hooks</h2>
-        <p>
-          'UsersList', 'UserDetails' and 'AddUser' are three different
-          components which use the same shared state through a context called
-          "UsersContext"
-        </p>
-        <div className="users-container">
-          <UsersList />
-          <UserDeails />
-        </div>
+        <UsersList />
+        <UserDeails />
         <AddUser />
       </UsersContextProvider>
     </div>

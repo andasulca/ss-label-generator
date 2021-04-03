@@ -1,5 +1,4 @@
 import React, { useState, useContext } from "react";
-import clsx from "clsx";
 import { UsersContext } from "./context";
 
 const AddUser = () => {
@@ -13,7 +12,7 @@ const AddUser = () => {
   return (
     <>
       <hr />
-      <h3>Add new user:</h3>
+      <h3>AddUser.js</h3>
       <input
         type="text"
         value={userName}
@@ -21,9 +20,6 @@ const AddUser = () => {
         placeholder="Enter name"
       />
       <button
-        className={clsx("add-btn", {
-          disabled: !userName
-        })}
         onClick={() => addNewUser(userName)}
         disabled={!userName}
       >

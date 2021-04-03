@@ -7,7 +7,7 @@ const UserDetails = () => {
 
   return (
     <div>
-      <h4>User Details: </h4>
+      <h4>UserDetail.js</h4>
       {selectedUser && selectedUser.name ? (
         <>
           <p>
