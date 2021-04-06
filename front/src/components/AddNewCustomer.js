@@ -1,13 +1,13 @@
 import { useState } from 'react';
-import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import AxiosPost from "../axios/AxiosPost";
 import Button from './common/Button';
+import InputField from './common/InputField';
 
-const FormDialog = () => {
+const AddNewCustomer = () => {
 	const [open, setOpen] = useState(false);
 
 	const handleClickOpen = () => {
@@ -45,25 +45,20 @@ const FormDialog = () => {
 			<Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
 				<DialogTitle id="form-dialog-title">Pievienot jaunu klientu</DialogTitle>
 				<DialogContent>
-					<TextField
-						required
+					<InputField
 						onChange={handleNosaukumsChange}
 						value={company_name}
-						autoFocus
+						autoFocus={true}
 						margin="dense"
 						id="company_name"
 						label="Uzņēmuma nosaukums"
-						fullWidth
 					/>
-					<TextField
-						required
+					<InputField
 						onChange={handleRegNrChange}
 						value={reg_number}
 						margin="dense"
 						id="reg_number"
 						label="Reģistrācijas numurs"
-						type="number"
-						fullWidth
 					/>
 				</DialogContent>
 				<DialogActions>
@@ -85,4 +80,4 @@ const FormDialog = () => {
 	);
 }
 
-export default FormDialog
+export default AddNewCustomer
