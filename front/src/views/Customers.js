@@ -1,8 +1,10 @@
+import AxiosGet from "../axios/AxiosGet";
 import Loader from "../components/common/Loader";
 import AddNewCustomer from "../components/AddNewCustomer";
 import Table from "../components/common/Table"
 
-const Customers = ({ clients }) => {
+const Customers = () => {
+	const clients = AxiosGet('clients');
 	const columns = [
 		{ field: "id", headerName: "ID", width: 70 },
 		{ field: "company_name", headerName: "Nosaukums", width: 175 },

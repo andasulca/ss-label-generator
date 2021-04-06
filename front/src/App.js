@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from "./components/Header";
-import AxiosGet from "./axios/AxiosGet";
 import Customers from "./views/Customers";
 import Boxes from './views/Boxes';
 import Test from './views/Test';
@@ -9,7 +8,6 @@ import NewLabels from './views/NewLabels';
 import Labels from './views/Labels';
 
 const App = () => {
-	const clients = AxiosGet('clients');
 	return (
 		<div className="App">
 			<Router >
@@ -17,12 +15,10 @@ const App = () => {
 				<div className="container">
 					<Switch>
 						<Route exact path="/">
-							<Customers
-							clients = {clients}/>
+							<Customers />
 						</Route>
                         <Route path="/boxes">
-                            <Boxes 
-                            clients = {clients}/>
+                            <Boxes />
                         </Route>
                         <Route path="/test">
                             <Test />
