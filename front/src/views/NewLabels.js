@@ -1,8 +1,8 @@
-import Btn from "../components/common/Btn";
+import Button from "../components/common/Button";
 import InputField from "../components/common/InputField";
 import Selectize from "../components/common/Selectize";
 import AxiosGet from "../axios/AxiosGet";
-import Loader from "../components/BeatLoader";
+import Loader from "../components/common/BeatLoader";
 
 const NewLabels = () => {
 	const clients = AxiosGet("clients");
@@ -14,7 +14,7 @@ const NewLabels = () => {
 					<InputField label={"Uzlīmju skaits"} />
 				</div>
 				<div className="row mt-2">
-					<Btn text={"Izdrukāt svītrkodus"} color={"primary"} />
+					<Button text={"Izdrukāt svītrkodus"} color={"primary"} />
 				</div>
 			</div>
 		</div>

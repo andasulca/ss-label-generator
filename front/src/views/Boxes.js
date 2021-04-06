@@ -1,6 +1,6 @@
 import AxiosGet from "../axios/AxiosGet";
 import Table from "../components/common/Table"
-import Loader from "../components/BeatLoader";
+import Loader from "../components/common/BeatLoader";
 
 const Boxes = () => {
     const boxes = AxiosGet('boxeswithclients');

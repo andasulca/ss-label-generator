@@ -1,8 +1,7 @@
 import Selectize from "../components/common/Selectize"
 import AxiosGet from "../axios/AxiosGet";
-import Loader from "../components/BeatLoader";
+import Loader from "../components/common/BeatLoader";
 import ToPrint from "../components/ToPrint"
-//import InputField from "../components/common/InputField";
 import { CSVLink } from "react-csv";
 
 const Test = () => {

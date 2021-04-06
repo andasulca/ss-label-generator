@@ -1,4 +1,4 @@
-import Btn from "../components/common/Btn";
+import Button from "../components/common/Button";
 import InputField from "../components/common/InputField";
 
 const Labels = () => {
@@ -12,7 +12,7 @@ const Labels = () => {
 					<InputField label={"Kastes numurs līdz"} />
 				</div>
 				<div className="row mt-2">
-					<Btn text={"Izdrukāt svītrkodus"} color={"primary"} />
+					<Button text={"Izdrukāt svītrkodus"} color={"primary"} />
 				</div>
 			</div>
 		</div>

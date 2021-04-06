@@ -1,7 +1,7 @@
 import { Navbar, Nav, NavDropdown, Form } from 'react-bootstrap'
 import logo from '../assets/images/logo.png';
 import { Link } from 'react-router-dom';
-import Btn from "../components/common/Btn";
+import Button from "../components/common/Button";
 
 const Header = () => {
     return (
@@ -17,7 +17,7 @@ const Header = () => {
                     </NavDropdown>
                 </Nav>
                 <Form inline>
-                    <Btn text={"Logout"} color={"primary"} />
+                    <Button text={"Logout"} color={"primary"} />
                 </Form>
             </Navbar>
         </div>

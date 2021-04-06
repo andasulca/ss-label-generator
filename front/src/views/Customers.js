@@ -1,5 +1,5 @@
-import Loader from "../components/BeatLoader";
-import FormDialog from "../components/FormDialog";
+import Loader from "../components/common/BeatLoader";
+import AddNewCustomer from "../components/AddNewCustomer";
 import Table from "../components/common/Table"
 
 const Customers = ({ clients }) => {
@@ -14,7 +14,7 @@ const Customers = ({ clients }) => {
 	return (
 		<div>
 			{clients.loading ? <Loader /> : <Table rows={row} columns={columns} pageSize={10} />}
-			<FormDialog btnText="Pievienot klientu" cancel="Atcelt" save="saglabāt" />
+			<AddNewCustomer btnText="Pievienot klientu" cancel="Atcelt" save="saglabāt" />
 		</div>
 	);
 }
