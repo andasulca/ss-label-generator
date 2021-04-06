@@ -1,5 +1,5 @@
-import App from "../context/App"
 import React from "react";
+import App from "../context/App"
 import Display from "../context/Display";
 
 export const JediContext = React.createContext();

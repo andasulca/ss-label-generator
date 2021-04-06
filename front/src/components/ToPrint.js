@@ -1,7 +1,6 @@
 import React from "react";
 import ReactToPrint from "react-to-print";
 import Barcode from "react-barcode";
-//import InputField from "../components/common/InputField";
 import TextField from "@material-ui/core/TextField";
 import logo from '../assets/images/logo.png';
 

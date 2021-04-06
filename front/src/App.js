@@ -1,12 +1,12 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from "./components/Header";
+import AxiosGet from "./axios/AxiosGet";
 import Customers from "./views/Customers";
 import Boxes from './views/Boxes';
 import Test from './views/Test';
 import Test2 from './views/Test2';
 import NewLabels from './views/NewLabels';
 import Labels from './views/Labels';
-import AxiosGet from "./axios/AxiosGet";
 
 const App = () => {
 	const clients = AxiosGet('clients');

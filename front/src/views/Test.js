@@ -1,8 +1,9 @@
-import Selectize from "../components/common/Selectize"
+import { CSVLink } from "react-csv";
 import AxiosGet from "../axios/AxiosGet";
+import Selectize from "../components/common/Selectize"
 import Loader from "../components/common/Loader";
 import ToPrint from "../components/ToPrint"
-import { CSVLink } from "react-csv";
+
 
 const Test = () => {
 	const clients = AxiosGet('clients');

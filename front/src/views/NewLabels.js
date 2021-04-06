@@ -1,7 +1,7 @@
+import AxiosGet from "../axios/AxiosGet";
 import Button from "../components/common/Button";
 import InputField from "../components/common/InputField";
 import Selectize from "../components/common/Selectize";
-import AxiosGet from "../axios/AxiosGet";
 import Loader from "../components/common/Loader";
 
 const NewLabels = () => {
