@@ -14,7 +14,7 @@ const NewLabels = () => {
 					<InputField label={"Uzlīmju skaits"} />
 				</div>
 				<div className="row mt-2">
-					<Button text={"Izdrukāt svītrkodus"} color={"primary"} />
+					<Button text={"Izdrukāt svītrkodus"} color={"primary"} variant="outlined" />
 				</div>
 			</div>
 		</div>

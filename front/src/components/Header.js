@@ -17,7 +17,7 @@ const Header = () => {
                     </NavDropdown>
                 </Nav>
                 <Form inline>
-                    <Button text={"Logout"} color={"primary"} />
+                    <Button text={"Logout"} color={"primary"} variant="outlined" />
                 </Form>
             </Navbar>
         </div>
