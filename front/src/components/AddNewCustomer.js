@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import AxiosPost from "../axios/AxiosPost";
+import Button from './common/Button';
 
 const FormDialog = () => {
 	const [open, setOpen] = useState(false);
@@ -36,9 +36,12 @@ const FormDialog = () => {
 
 	return (
 		<div>
-			<Button variant="outlined" color="primary" onClick={handleClickOpen}>
-				Pievienot jaunu klientu
-			</Button>
+			<Button
+				variant="outlined"
+				color="primary"
+				onClick={handleClickOpen}
+				text="Pievienot jaunu klientu"
+			/>
 			<Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
 				<DialogTitle id="form-dialog-title">Pievienot jaunu klientu</DialogTitle>
 				<DialogContent>
@@ -64,12 +67,18 @@ const FormDialog = () => {
 					/>
 				</DialogContent>
 				<DialogActions>
-					<Button onClick={handleClose} color="primary">
-						Atcelt
-					</Button>
-					<Button onClick={handleSave} color="primary">
-						Saglabāt
-					</Button>
+					<Button
+						variant="outlined"
+						color="primary"
+						onClick={handleClose}
+						text="Atcelt"
+					/>
+					<Button
+						variant="outlined"
+						color="primary"
+						onClick={handleSave}
+						text="Saglabāt"
+					/>
 				</DialogActions>
 			</Dialog>
 		</div>
