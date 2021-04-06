@@ -1,6 +1,6 @@
 import Selectize from "../components/common/Selectize"
 import AxiosGet from "../axios/AxiosGet";
-import Loader from "../components/common/BeatLoader";
+import Loader from "../components/common/Loader";
 import ToPrint from "../components/ToPrint"
 import { CSVLink } from "react-csv";
 

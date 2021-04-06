@@ -1,4 +1,4 @@
-import Loader from "../components/common/BeatLoader";
+import Loader from "../components/common/Loader";
 import AddNewCustomer from "../components/AddNewCustomer";
 import Table from "../components/common/Table"
 
