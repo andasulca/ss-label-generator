@@ -2,14 +2,6 @@
     width: 50px;
 }
 
-.navbar-light .navbar-nav .nav-link.active {
-    color: #dc3545;
-}
-
-.great-btn {
-    background-color: #dc3545;
-}
-
 .barcode-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -38,4 +30,9 @@
     //     right: 0;
     //     top: 0;
     // }
+}
+
+.table {
+    height: 700px;
+    width: 100%;
 }
