@@ -1,4 +1,5 @@
 import React from "react";
+import EditTableTest from "../components/EditTableTest";
 import App from "../context/App"
 import Display from "../context/Display";
 
@@ -11,6 +12,7 @@ const Test2 = () => {
                 <Display />
             </JediContext.Provider>
             <App />
+            <EditTableTest />
         </div>
     )
 }
