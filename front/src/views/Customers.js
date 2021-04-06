@@ -16,7 +16,7 @@ const Customers = () => {
 	return (
 		<div>
 			{clients.loading ? <Loader /> : <Table rows={row} columns={columns} pageSize={10} />}
-			<AddNewCustomer btnText="Pievienot klientu" cancel="Atcelt" save="saglabāt" />
+			<AddNewCustomer />
 		</div>
 	);
 }

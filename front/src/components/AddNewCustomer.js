@@ -7,7 +7,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import AxiosPost from "../axios/AxiosPost";
 
-const FormDialog = ({ btnText, cancel, save }) => {
+const FormDialog = () => {
 	const [open, setOpen] = useState(false);
 
 	const handleClickOpen = () => {
@@ -37,7 +37,7 @@ const FormDialog = ({ btnText, cancel, save }) => {
 	return (
 		<div>
 			<Button variant="outlined" color="primary" onClick={handleClickOpen}>
-				{btnText}
+				Pievienot jaunu klientu
 			</Button>
 			<Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
 				<DialogTitle id="form-dialog-title">Pievienot jaunu klientu</DialogTitle>
@@ -65,10 +65,10 @@ const FormDialog = ({ btnText, cancel, save }) => {
 				</DialogContent>
 				<DialogActions>
 					<Button onClick={handleClose} color="primary">
-						{cancel}
+						Atcelt
 					</Button>
 					<Button onClick={handleSave} color="primary">
-						{save}
+						Saglabāt
 					</Button>
 				</DialogActions>
 			</Dialog>
