@@ -4,7 +4,7 @@ const Table = ({ rows, columns, pageSize }) => {
 
 	return (
 		<div className="table">
-			<DataGrid rows={rows} columns={columns} pageSize={pageSize} checkboxSelection />
+			<DataGrid rows={rows} columns={columns} pageSize={pageSize} />
 		</div>
 	);
 }

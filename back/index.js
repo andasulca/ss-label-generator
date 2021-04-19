@@ -13,12 +13,22 @@ app.use(express.json()); //req.body
 
 app.post("/post/clients", async (req, res) => {
   console.log(req.body);
+  let query = "";
+  if(req.body.id && typeof req.body.id === 'number') 
+      query = "UPDATE public.clients " +
+              " set company_name = '" + req.body.company_name + "', " +
+              " reg_number = '" + req.body.reg_number + "' " +
+              " where id = " + req.body.id;
+  else
+           query =       
+              "INSERT INTO public.clients" +
+              "(company_name, reg_number)" + 
+              " VALUES('" + req.body.company_name + "' , " 
+              + req.body.reg_number + ") RETURNING *";
+
   try {
     const newRow = await pool.query(
-      "INSERT INTO public.clients" +
-      "(company_name, reg_number)" + 
-      " VALUES('" + req.body.company_name + "' , " 
-      + req.body.reg_number + ") RETURNING *"
+      query
     );
     res.json(newRow.rows[0]);
   } catch (err) {

@@ -7,7 +7,9 @@ import AxiosPost from "../axios/AxiosPost";
 import Button from './common/Button';
 import InputField from './common/InputField';
 
-const AddNewCustomer = () => {
+const AddNewCustomer = (props) => {
+	console.log(props.reg_number);
+	//console.log(row.company_name);
 	const [open, setOpen] = useState(false);
 
 	const handleClickOpen = () => {
@@ -18,8 +20,8 @@ const AddNewCustomer = () => {
 		setOpen(false);
 	};
 
-	const [company_name, setNosaukums] = useState('');
-	const [reg_number, setRegNr] = useState('');
+	const [company_name, setNosaukums] = useState((typeof props.company_name !== 'undefined' ? props.company_name:''));
+	const [reg_number, setRegNr] = useState((typeof props.reg_number !== 'undefined' ? props.reg_number:''));
 
 	const handleNosaukumsChange = (event) => setNosaukums(event.target.value);
 	const handleRegNrChange = (event) => setRegNr(event.target.value);
@@ -27,7 +29,8 @@ const AddNewCustomer = () => {
 	const handleSave = async () => {
 		await AxiosPost('clients', {
 			company_name,
-			reg_number
+			reg_number,
+			id : props.id
 		});
 		setNosaukums('');
 		setRegNr('');
@@ -40,10 +43,10 @@ const AddNewCustomer = () => {
 				variant="outlined"
 				color="primary"
 				onClick={handleClickOpen}
-				text="Pievienot jaunu klientu"
+				text={props.buttonTitle}
 			/>
 			<Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
-				<DialogTitle id="form-dialog-title">Pievienot jaunu klientu</DialogTitle>
+				<DialogTitle id="form-dialog-title">{props.modalTitle}</DialogTitle>
 				<DialogContent>
 					<InputField
 						onChange={handleNosaukumsChange}
