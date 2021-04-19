@@ -6,30 +6,27 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    // grid-template-rows: 12.5%;
 
-    // .with-logo {
-    //     height: 37mm;
-    // }
-
-    .logo-barcode {
-        // position: absolute;
-        // top: 0;
-        // left: 0;
-        width: 50px;
+    .with-logo {
+        width: 380px;
+        height: 184px;
     }
 
-    // .client-id {
-    //     position: absolute;
-    //     left: 0;
-    //     bottom: 0;
-    // }
+    .logo-div {
+        float: left;
+        clear: both;
+    }
 
-    // .barcode {
-    //     position: absolute;
-    //     right: 0;
-    //     top: 0;
-    // }
+    .id-div {
+        float: left;
+        clear: left;
+    }
+
+    .logo-barcode {
+        width: 50px;
+        padding-top:3px;
+        float: left;
+    }
 }
 
 .table {

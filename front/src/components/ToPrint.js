@@ -20,11 +20,13 @@ class ComponentToPrint extends React.Component {
 		const componentsToRender = components.map((Component, i) => (
 			//<Component key={i + startingValue} value={i + startingValue} />
 			<div className="with-logo">
-				<div className="float-left">
-					<img src={logo} alt="Logo" className="logo-barcode" />
+				<div className="logo-div">
+					<img src={logo} alt="Logo" className="logo-barcode" />	
+				</div>
+				<div className="id-div">
 					<h3 className="client-id">client_id</h3>
 				</div>
-				<div className="barcode float-right">
+				<div className="barcode">
 					<Component width={4} key={i + startingValue} value={i + startingValue} />
 				</div>
 			</div>
