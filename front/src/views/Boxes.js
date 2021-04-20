@@ -4,7 +4,7 @@ import Loader from "../components/common/Loader";
 
 const Boxes = () => {
     const boxes = AxiosGet('boxeswithclients');
-    console.log(boxes)
+
     const columns = [
         { field: 'id', headerName: 'Kastes numurs', width: 175 },
         { field: 'client_id', headerName: 'Klienta numurs', width: 175 },

@@ -3,7 +3,6 @@ import Header from "./components/Header";
 import Customers from "./views/Customers";
 import Boxes from './views/Boxes';
 import Test from './views/Test';
-import Test2 from './views/Test2';
 import NewLabels from './views/NewLabels';
 import Labels from './views/Labels';
 
@@ -22,9 +21,6 @@ const App = () => {
                         </Route>
                         <Route path="/test">
                             <Test />
-                        </Route>
-						<Route path="/test2">
-                            <Test2 />
                         </Route>
                         <Route path="/newlabels">
                             <NewLabels />

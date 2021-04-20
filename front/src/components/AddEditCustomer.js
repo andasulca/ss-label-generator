@@ -8,8 +8,7 @@ import Button from './common/Button';
 import InputField from './common/InputField';
 
 const AddNewCustomer = (props) => {
-	console.log(props.reg_number);
-	//console.log(row.company_name);
+
 	const [open, setOpen] = useState(false);
 
 	const handleClickOpen = () => {
