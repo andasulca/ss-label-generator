@@ -1,4 +1,3 @@
-import { CSVLink } from "react-csv";
 import AxiosGet from "../axios/AxiosGet";
 import Selectize from "../components/common/Selectize"
 import Loader from "../components/common/Loader";
@@ -13,7 +12,6 @@ const Test = () => {
 		<div>
 			{clients.loading ? <Loader /> : <Selectize data={clients.data} />}
 			{nextbox.loading ? <Loader /> : <ToPrint nextbox={nextbox.data} />}
-			{clients.loading ? <Loader /> : <CSVLink data={clients.data}>Download me</CSVLink>}
 		</div>
 	)
 }
