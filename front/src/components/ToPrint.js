@@ -5,6 +5,7 @@ import TextField from "@material-ui/core/TextField";
 import logo from '../assets/images/logo.png';
 
 class ComponentToPrint extends React.Component {
+	
 	render() {
 
 		const startingValue = this.props.data.nextbox.nextbox;
@@ -18,13 +19,12 @@ class ComponentToPrint extends React.Component {
 			components.push(Barcode);
 		}
 		const componentsToRender = components.map((Component, i) => (
-			//<Component key={i + startingValue} value={i + startingValue} />
 			<div className="with-logo">
 				<div className="logo-div">
 					<img src={logo} alt="Logo" className="logo-barcode" />	
 				</div>
 				<div className="id-div">
-					<h3 className="client-id">client_id</h3>
+					<h3 className="client-id">{this.props.clientID}</h3>
 				</div>
 				<div className="barcode">
 					<Component width={4} key={i + startingValue} value={i + startingValue} />
@@ -33,13 +33,6 @@ class ComponentToPrint extends React.Component {
 		));
 
 		return (
-			// <table>
-			// 	<tbody>
-			// 		<tr>
-			// 			<td>{componentsToRender}</td>
-			// 		</tr>
-			// 	</tbody>
-			// </table>
 			<div className="barcode-container">{componentsToRender}</div>
 		);
 	}
@@ -54,6 +47,7 @@ class ToPrint extends React.Component {
 		};
 		this.handleChange = this.handleChange.bind(this);
 	}
+
 
 	handleChange({ target }) {
 		this.setState({
@@ -77,6 +71,7 @@ class ToPrint extends React.Component {
 				<ComponentToPrint
 					ref={(el) => (this.componentRef = el)}
 					data={this.state}
+					clientID={this.props.clientID}
 				/>
 			</div>
 		);

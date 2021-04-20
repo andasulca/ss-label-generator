@@ -1,6 +1,6 @@
 import Select from 'react-select'
 
-const Selectize = ({ data }) => {
+const Selectize = ({ data, onChange }) => {
 
 	const options = data.map(d => ({
 		"value": d.id,
@@ -8,15 +8,9 @@ const Selectize = ({ data }) => {
 	})
 	)
 
-	const getValue = (e) => {
-		const selectedValue = e.value
-		console.log(selectedValue)
-	}
-
-
 	return (
 		<div>
-			<Select options={options} onChange={getValue} />
+			<Select options={options} onChange={onChange} />
 		</div>
 	)
 }
