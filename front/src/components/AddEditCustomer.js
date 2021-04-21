@@ -35,7 +35,7 @@ const AddNewCustomer = (props) => {
 			id : props.id
 		});
 		setOpen(false);
-		refreshPage(true);
+		refreshPage();
 	}
 
 	return (
