@@ -24,6 +24,9 @@ const AddNewCustomer = (props) => {
 
 	const handleNosaukumsChange = (event) => setNosaukums(event.target.value);
 	const handleRegNrChange = (event) => setRegNr(event.target.value);
+	const refreshPage = () => {
+		window.location.reload(false);
+	  }
 
 	const handleSave = async () => {
 		await AxiosPost('clients', {
@@ -31,9 +34,8 @@ const AddNewCustomer = (props) => {
 			reg_number,
 			id : props.id
 		});
-		setNosaukums('');
-		setRegNr('');
 		setOpen(false);
+		refreshPage(true);
 	}
 
 	return (
