@@ -19,7 +19,7 @@ const App = () => {
             <Switch>
               <Route exact path="/">
                 <Customers />
-              </Route>						
+              </Route>
               <Route path="/boxes">
                 <Boxes />
               </Route>
