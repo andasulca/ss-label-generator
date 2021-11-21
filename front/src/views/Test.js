@@ -4,6 +4,7 @@ import Selectize from "../components/common/Selectize";
 import Loader from "../components/common/Loader";
 import ToPrint from "../components/ToPrint";
 
+
 const Test = () => {
   const clients = AxiosGet("clients");
   const nextbox = AxiosGet("nextbox");
@@ -24,7 +25,7 @@ const Test = () => {
       {nextbox.loading ? (
         <Loader />
       ) : (
-        <ToPrint nextbox={nextbox.data} clientID={clientID} />
+        <ToPrint nextbox={nextbox.data[0].nextbox} clientID={clientID} />
       )}
     </div>
   );

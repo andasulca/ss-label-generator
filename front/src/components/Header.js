@@ -33,6 +33,9 @@ const Header = () => {
               <NavDropdown.Item as={Link} to="/labels">
                 Izdrukāt esošus svītrkodus
               </NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/test">
+                test
+              </NavDropdown.Item>
             </NavDropdown>
           </Nav>
         )}

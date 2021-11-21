@@ -9,22 +9,44 @@
 
     .with-logo {
         width: 380px;
-        height: 184px;
+        height: 201px;
+        border: 1px solid;
+
+        .logo-text {
+            float: left;
+            color: red;
+            font-weight: 700;
+            font-size: 14px;
+            margin-top: 12px;
+        }
     }
 
     .logo-div {
         float: left;
-        clear: both;
+        height: 60px;
+        margin-top: 10px;
+        margin-left: 20px;
+        img {
+            width: 130px;
+        }
     }
 
     .id-div {
         float: left;
         clear: left;
+        padding-top: 20px;
+        margin-left: 20px;
+        width: 70px;
+        float: left;
     }
 
     .logo-barcode {
         width: 50px;
         padding-top: 3px;
+        float: left;
+    }
+
+    .barcode{
         float: left;
     }
 }

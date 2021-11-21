@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import axios from "axios";
 
-const AxiosGet = (uri) => {
+const AxiosGet = (uri, query) => {
   const [request, setRequest] = useState({
     loading: true,
     data: null,
@@ -26,6 +26,7 @@ const AxiosGet = (uri) => {
             "content-type": "application/json",
             authorization: `Bearer ${res}`,
           },
+          params: query
         };
 
         axios

@@ -77,6 +77,39 @@ app.post("/post/boxes", async (req, res) => {
   }
 });
 
+app.post("/post/saveboxes", async (req, res) => {
+  console.log(req.body);
+  try {
+    const newRow = await pool.query(
+      "select * from saveBoxes(" +
+      req.body.client_id + 
+      "," +
+      req.body.box_count +
+      ")"
+    );
+    res.json(newRow.rows);
+  } catch (err) {
+    console.error(err.message);
+  }
+});
+
+app.get("/get/getinfo", async (req, res) => {
+  console.log(req.query);
+  try {
+    const newRow = await pool.query(
+      "select * from getInfo(" +
+      req.query.boxID + 
+      "," +
+      req.query.box_count +
+      ")"
+    );
+    console.log(newRow.rows);
+    res.json(newRow.rows);
+  } catch (err) {
+    console.error(err.message);
+  }
+});
+
 //get all todos
 
 app.get("/get/*", jwtCheck, async (req, res) => {

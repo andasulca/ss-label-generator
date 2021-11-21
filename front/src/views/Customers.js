@@ -5,6 +5,10 @@ import Table from "../components/common/Table";
 
 const Customers = () => {
   const clients = AxiosGet("clients");
+  let boxes = AxiosGet("getinfo", {
+    boxID : 3,
+    box_count: 5
+  });    
   const columns = [
     { field: "id", headerName: "ID", width: 70 },
     { field: "company_name", headerName: "Nosaukums", width: 175 },
